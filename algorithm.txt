@@ -1,0 +1,33 @@
+Logic:
+
+Initialization:
+
+Set three counters to zero:
+sentenceLength to keep track of the total characters.
+wordCount to keep track of the number of words.
+vowelCount to keep track of the number of vowels.
+Set a flag inWord to false, indicating we're not currently inside a word.
+Iterate through each character of the sentence:
+
+For each character:
+Increment sentenceLength.
+Check if the character is a space, punctuation mark, or a period:
+If yes, set inWord to false (end of a word).
+Otherwise (not a space/punctuation/period):
+Check if the character is a vowel (a, e, i, o, u, A, E, I, O, U):
+If yes, increment vowelCount.
+If the character is not a space/punctuation/period and inWord is false:
+This means we're entering a new word. Set inWord to true.
+If the character is not a space/punctuation/period and inWord is already true:
+We're still within the same word. Do nothing.
+Check if we're at the end of the sentence (encountered a period):
+If yes, stop iterating (reached the end).
+
+Word count handling:
+
+Outside the loop, if inWord is true after iterating through the entire sentence, it means the last character was part of a word.
+In this case, increment wordCount by 1 to account for the last word.
+
+Output:
+
+Return the values of the three counters: sentenceLength, wordCount, and vowelCount.
